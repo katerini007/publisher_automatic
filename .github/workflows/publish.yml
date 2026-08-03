@@ -1,0 +1,51 @@
+name: Publish due reels
+
+# Runs on a schedule in GitHub's cloud (your computer can be off).
+# Every run: check the queue, publish anything due, commit the updated
+# statuses back so the next run doesn't re-publish them.
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes (UTC). GitHub may delay a few min.
+  workflow_dispatch: {}       # lets you trigger a run manually from the Actions tab
+
+# Allow the workflow to commit queue.json changes back to the repo.
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-reels
+  cancel-in-progress: false   # never run two publishers at once
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Publish anything due
+        env:
+          # Secrets are set in repo Settings -> Secrets and variables -> Actions.
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+        run: python run_due.py
+
+      - name: Commit updated queue state
+        run: |
+          git config user.name  "reel-scheduler-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet -- data/queue.json; then
+            git add data/queue.json
+            git commit -m "chore: update queue status [skip ci]"
+            git push
+          else
+            echo "No queue changes to commit."
+          fi
