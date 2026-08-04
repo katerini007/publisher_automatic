@@ -331,12 +331,12 @@
     "caption": "This AI workflow makes 30 Reels in 5 minutes 👇\n\nYou do not need  30 finished masterpiecess, you need 30 tested versions.\n\nI make one strong idea, then AI spins it into lots of hooks and cuts. Then I test them to find the one that flies.\nRecently one wnet to 20K views I iwll be tetsing this hook with otehr videos to determine if the hook is the winning element here. \nThat's how a brand new account can post every day without a big team.\n\nComment AUTOMATION and I'll show you the workflow.\n\n#aiautomation #reelsstrategy #contentcreation #aiforbusiness #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "This AI workflow creates 30 Reels in 5 minutes."
   },
   {
@@ -351,12 +351,12 @@
     "caption": "This AI workflow makes 30 Reels in 5 minutes 👇\n\nYou do not need  30 finished masterpiecess, you need 30 tested versions.\n\nI make one strong idea, then AI spins it into lots of hooks and cuts. Then I test them to find the one that flies.\nRecently one wnet to 20K views I iwll be tetsing this hook with otehr videos to determine if the hook is the winning element here. \nThat's how a brand new account can post every day without a big team.\n\nComment AUTOMATION and I'll show you the workflow.\n\n#aiautomation #reelsstrategy #contentcreation #aiforbusiness #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "This AI workflow creates 30 Reels in 5 minutes."
   },
   {
