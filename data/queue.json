@@ -71,12 +71,12 @@
     "caption": "I stopped making my content by hand. AI does it now 👇\n\nThis is a brand new account with zero connections. In the last 30 days it hit 1,000,000 views.\n\nHere's the system doing the work:\n• 1 agent finds ideas + does the research\n• 1 agent writes the scripts and builds the video\n• 1 agent A/B tests the hooks\n• 1 agent uploads it\n• 1 agent reads the analytics and tells me what's next\n\nI still create by hand too — but the boring parts run without me.\n\nIf your team spends hours and posts 7 times a month, that's the problem we fix.\n\nComment AUTOMATION to see how.\n\n#aiautomation #contentsystem #businessgrowth #aiforbusiness #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "I stopped creating content myself. AI does it now."
   },
   {
@@ -91,12 +91,12 @@
     "caption": "I stopped making my content by hand. AI does it now 👇\n\nThis is a brand new account with zero connections. In the last 30 days it hit 1,000,000 views.\n\nHere's the system doing the work:\n• 1 agent finds ideas + does the research\n• 1 agent writes the scripts and builds the video\n• 1 agent A/B tests the hooks\n• 1 agent uploads it\n• 1 agent reads the analytics and tells me what's next\n\nI still create by hand too — but the boring parts run without me.\n\nIf your team spends hours and posts 7 times a month, that's the problem we fix.\n\nComment AUTOMATION to see how.\n\n#aiautomation #contentsystem #businessgrowth #aiforbusiness #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "I stopped creating content myself. AI does it now."
   },
   {
@@ -111,12 +111,12 @@
     "caption": "I stopped making my content by hand. AI does it now 👇\n\nThis is a brand new account with zero connections. In the last 30 days it hit 1,000,000 views.\n\nHere's the system doing the work:\n• 1 agent finds ideas + does the research\n• 1 agent writes the scripts and builds the video\n• 1 agent A/B tests the hooks\n• 1 agent uploads it\n• 1 agent reads the analytics and tells me what's next\n\nI still create by hand too — but the boring parts run without me.\n\nIf your team spends hours and posts 7 times a month, that's the problem we fix.\n\nComment AUTOMATION to see how.\n\n#aiautomation #contentsystem #businessgrowth #aiforbusiness #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "I stopped creating content myself. AI does it now."
   },
   {
