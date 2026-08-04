@@ -411,12 +411,12 @@
     "caption": "Why 90% of business owners waste time on content 👇\n\nNo strategy.\nNo clear direction.\nNo idea who they’re actually speaking to.\n\nSo they go viral in the wrong country, attract the wrong audience, and celebrate numbers that never turn into sales.\n\nI was just as lost.\n\nCreating content without a strategy is like driving fast with no destination.\n\nYou burn fuel.\nYou cover miles.\nBut you still don’t get anywhere that matters.\n\nGet the direction first.\n\nThen build the system.\nComment AUTOMATION and I'll help you start.\n\n#contentstrategy #businessgrowth #aiforbusiness #smallbusinessowner #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "Why 90% of business owners waste time creating content."
   },
   {
@@ -431,12 +431,12 @@
     "caption": "The content strategy that's quietly replacing social media managers 👇\n\nThe job isn't gone — it's changing.\n\nThe boring parts (uploading, editing, scheduling) are moving to AI, fast.\n\nWhat stays human: strategy, taste, and really knowing YOUR business. That's the part that actually sells.\n\nThe managers who win are the ones who let AI do the busywork and spend their time on what matters.\n\nComment AUTOMATION to see the setup.\n\n#socialmediamanager #aiforbusiness #contentstrategy #marketing #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "The content strategy that's replacing social media managers."
   },
   {
