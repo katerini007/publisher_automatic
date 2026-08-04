@@ -211,12 +211,12 @@
     "caption": "5 AI automations that do the work of a whole marketing team 👇\n\n1. Research → finds ideas your audience actually wants\n2. Creation → writes the script and builds the video\n3. Testing → A/B tests hooks to find winners\n4. Upload → posts and schedules for you\n5. Analytics → tells you what to make next\n\nOne founder. Five agents. No big team needed.\n\nComment AUTOMATION and I'll break it down.\n\n#aiautomation #marketingteam #aiforbusiness #contentcreation #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "5 AI automations that replace a marketing team."
   },
   {
@@ -231,12 +231,12 @@
     "caption": "5 AI automations that do the work of a whole marketing team 👇\n\n1. Research → finds ideas your audience actually wants\n2. Creation → writes the script and builds the video\n3. Testing → A/B tests hooks to find winners\n4. Upload → posts and schedules for you\n5. Analytics → tells you what to make next\n\nOne founder. Five agents. No big team needed.\n\nComment AUTOMATION and I'll break it down.\n\n#aiautomation #marketingteam #aiforbusiness #contentcreation #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "5 AI automations that replace a marketing team."
   },
   {
@@ -251,12 +251,12 @@
     "caption": "If you could learn only ONE AI tool this year, make it this 👇\n\nClaude.\n\nFor a business owner it can write your content, sort your messy ideas, build little \"skills\" that do the same job again and again, and take the boring tasks off your plate.\n\nYou don't need 20 tools. You need one you actually use well.\n\nComment AUTOMATION and I'll show you how I use it for my business.\n\n#claudeai #aiforbusiness #aitools #productivity #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "If I could learn only one AI tool this year…"
   },
   {
