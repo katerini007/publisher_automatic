@@ -11,12 +11,12 @@
     "caption": "The #1 AI skill for business owners in 2026 isn't a tool 👇\n\nIt's knowing WHERE to use it.\n\nTools change every single day. Chasing every shiny new one is a waste of time.\n\nDo this instead: look at where your team loses the most hours. Uploading and scheduling alone can eat ~3 hours a week. An AI agent can do that part on autopilot.\n\nFind the problem first. Then pick the tool — not the other way around.\n\nAI is a tool, not a buzzword.\n\nComment AUTOMATION and I'll show you where to start.\n\n#aiforbusiness #contentautomation #smallbusinessowner #aitools #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "The AI skill every business owner needs in 2026."
   },
   {
@@ -31,12 +31,12 @@
     "caption": "The #1 AI skill for business owners in 2026 isn't a tool 👇\n\nIt's knowing WHERE to use it.\n\nTools change every single day. Chasing every shiny new one is a waste of time.\n\nDo this instead: look at where your team loses the most hours. Uploading and scheduling alone can eat ~3 hours a week. An AI agent can do that part on autopilot.\n\nFind the problem first. Then pick the tool — not the other way around.\n\nAI is a tool, not a buzzword.\n\nComment AUTOMATION and I'll show you where to start.\n\n#aiforbusiness #contentautomation #smallbusinessowner #aitools #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "The AI skill every business owner needs in 2026."
   },
   {
@@ -51,12 +51,12 @@
     "caption": "The #1 AI skill for business owners in 2026 isn't a tool 👇\n\nIt's knowing WHERE to use it.\n\nTools change every single day. Chasing every shiny new one is a waste of time.\n\nDo this instead: look at where your team loses the most hours. Uploading and scheduling alone can eat ~3 hours a week. An AI agent can do that part on autopilot.\n\nFind the problem first. Then pick the tool — not the other way around.\n\nAI is a tool, not a buzzword.\n\nComment AUTOMATION and I'll show you where to start.\n\n#aiforbusiness #contentautomation #smallbusinessowner #aitools #reels",
     "trial": true,
     "graduation_strategy": "MANUAL",
-    "status": "scheduled",
+    "status": "failed",
     "container_id": null,
     "media_id": null,
     "permalink": null,
-    "error": null,
-    "attempts": 0,
+    "error": "Rate limit check failed (400): API access blocked.",
+    "attempts": 1,
     "_hook": "The AI skill every business owner needs in 2026."
   },
   {
