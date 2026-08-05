@@ -149,6 +149,14 @@ def main():
     args = ap.parse_args()
 
     start = datetime.strptime(args.start, "%Y-%m-%d %H:%M")
+    # SAFETY — a past-dated start makes every slot instantly "due", which would
+    # dump the whole schedule at once. Refuse it. (Root cause of the Aug-4/Aug-5
+    # burst.) Small clock skew is allowed via a 5-minute grace.
+    if start < datetime.now() - timedelta(minutes=5):
+        raise SystemExit(
+            f"--start {args.start} is in the PAST (now is {datetime.now():%Y-%m-%d %H:%M}). "
+            "Pick a future time so posts don't all fire at once."
+        )
     rows = read_rows()
     rows = interleave(rows)
     rows = assign_times(rows, start, args.per_day, args.every)

@@ -33,6 +33,28 @@ import meta_api
 console = Console()
 load_dotenv(override=True)
 
+# ---------------------------------------------------------------------------
+# SAFETY LIMITS — these make a mass-publish burst structurally impossible.
+# A single run can NEVER post more than MAX_PER_RUN reels, will NEVER post a
+# job that missed its window by more than STALE_GRACE_MIN (instead it marks it
+# "missed"), and will NEVER post if another reel went out in the last
+# MIN_GAP_MIN minutes. Even a queue full of past-due jobs drains at most one
+# per run, only within its fresh window.
+# ---------------------------------------------------------------------------
+MAX_PER_RUN = 1        # hard cap on reels published in one invocation
+STALE_GRACE_MIN = 45   # a job later than this past its time is SKIPPED (marked "missed"), never published
+MIN_GAP_MIN = 25       # refuse to post if the last published reel is newer than this
+
+
+def _last_published_at():
+    """Most recent published job's scheduled_time (proxy for last post), or None."""
+    times = [
+        datetime.fromisoformat(j["scheduled_time"])
+        for j in queue_store.load_all()
+        if j.get("status") == "published"
+    ]
+    return max(times) if times else None
+
 
 def publish_job(creds: meta_api.Credentials, job: dict) -> None:
     job_id = job["id"]
@@ -84,15 +106,47 @@ def publish_job(creds: meta_api.Credentials, job: dict) -> None:
 
 
 def run_once(dry_run: bool = False) -> int:
-    due = queue_store.due_jobs(datetime.now())
+    now = datetime.now()
+    due = queue_store.due_jobs(now)
     if not due:
-        console.print(f"[dim]{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} — nothing due.[/dim]")
+        console.print(f"[dim]{now.strftime('%Y-%m-%d %H:%M:%S')} — nothing due.[/dim]")
         return 0
 
+    # SAFETY 1 — drop stale jobs. A job that missed its slot by more than
+    # STALE_GRACE_MIN is NOT published late; it's marked "missed". This is what
+    # stops a whole past-dated day of jobs from firing in one catch-up burst.
+    fresh = []
+    for job in sorted(due, key=lambda j: j["scheduled_time"]):
+        late_min = (now - datetime.fromisoformat(job["scheduled_time"])).total_seconds() / 60
+        if late_min > STALE_GRACE_MIN:
+            if not dry_run:
+                queue_store.update_job(job["id"], status="missed",
+                                       error=f"skipped: {int(late_min)}min past window (> {STALE_GRACE_MIN})")
+            console.print(f"[yellow]skip[/yellow] {job['id']} — {int(late_min)}min stale, marked missed")
+        else:
+            fresh.append(job)
+
+    if not fresh:
+        console.print(f"[dim]{now.strftime('%H:%M:%S')} — nothing fresh to publish.[/dim]")
+        return 0
+
+    # SAFETY 2 — minimum gap. Never post if a reel went out very recently.
+    last = _last_published_at()
+    if last is not None:
+        gap_min = (now - last).total_seconds() / 60
+        if gap_min < MIN_GAP_MIN:
+            console.print(f"[yellow]hold[/yellow] — last post {int(gap_min)}min ago (< {MIN_GAP_MIN}); skipping this run.")
+            return 0
+
+    # SAFETY 3 — hard per-run cap. At most MAX_PER_RUN reels leave in one run.
+    batch = fresh[:MAX_PER_RUN]
+    if len(fresh) > MAX_PER_RUN:
+        console.print(f"[dim]{len(fresh)} fresh due; capping to {MAX_PER_RUN} this run.[/dim]")
+
     if dry_run:
-        for job in due:
+        for job in batch:
             console.print(f"[yellow]would publish[/yellow] {job['id']} ({job['media_type']}) — no API calls made")
-        return len(due)
+        return len(batch)
 
     try:
         creds = meta_api.load_credentials()
@@ -100,9 +154,9 @@ def run_once(dry_run: bool = False) -> int:
         console.print(f"[bold red]{e}[/bold red]")
         sys.exit(1)
 
-    for job in due:
+    for job in batch:
         publish_job(creds, job)
-    return len(due)
+    return len(batch)
 
 
 def main():
