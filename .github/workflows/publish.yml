@@ -19,6 +19,10 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # GitHub runners are UTC; queue.json times are written in local time.
+    # Force the runner's clock to the user's timezone so datetime.now() matches.
+    env:
+      TZ: Europe/Madrid
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
