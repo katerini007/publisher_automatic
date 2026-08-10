@@ -20,6 +20,7 @@ Usage:
 """
 
 import argparse
+import os
 import sys
 import time
 from datetime import datetime
@@ -34,16 +35,26 @@ console = Console()
 load_dotenv(override=True)
 
 # ---------------------------------------------------------------------------
-# SAFETY LIMITS — these make a mass-publish burst structurally impossible.
-# A single run can NEVER post more than MAX_PER_RUN reels, will NEVER post a
-# job that missed its window by more than STALE_GRACE_MIN (instead it marks it
-# "missed"), and will NEVER post if another reel went out in the last
-# MIN_GAP_MIN minutes. Even a queue full of past-due jobs drains at most one
-# per run, only within its fresh window.
+# SAFETY LIMITS — these make an *accidental* mass-publish impossible.
+# Defaults: a run posts at most 1 reel, skips jobs >45min late (marks "missed"),
+# and won't post if one went out in the last 25min. Scheduled cron runs use
+# these defaults and can never dump the queue.
+#
+# A DELIBERATE burst is still possible, but only by explicitly overriding these
+# via env vars on a manual run (e.g. MAX_PER_RUN=10 MIN_GAP_MIN=0). The env is
+# only set by the manual "burst" workflow_dispatch — never by the schedule.
 # ---------------------------------------------------------------------------
-MAX_PER_RUN = 1        # hard cap on reels published in one invocation
-STALE_GRACE_MIN = 45   # a job later than this past its time is SKIPPED (marked "missed"), never published
-MIN_GAP_MIN = 25       # refuse to post if the last published reel is newer than this
+def _env_int(name, default):
+    v = os.environ.get(name, "").strip()
+    try:
+        return int(v) if v else default
+    except ValueError:
+        return default
+
+
+MAX_PER_RUN = _env_int("MAX_PER_RUN", 1)        # hard cap on reels published in one invocation
+STALE_GRACE_MIN = _env_int("STALE_GRACE_MIN", 45)  # a job later than this past its time is SKIPPED (marked "missed")
+MIN_GAP_MIN = _env_int("MIN_GAP_MIN", 25)       # refuse to post if the last published reel is newer than this
 
 
 def _last_published_at():

@@ -6,7 +6,16 @@ name: Publish due reels
 on:
   schedule:
     - cron: "*/10 * * * *"   # every 10 minutes (UTC). GitHub may delay a few min.
-  workflow_dispatch: {}       # lets you trigger a run manually from the Actions tab
+  workflow_dispatch:          # manual run. Optionally allow a DELIBERATE burst.
+    inputs:
+      max_per_run:
+        description: "Max reels to publish this run (default 1). Set higher only for an intentional burst."
+        required: false
+        default: "1"
+      min_gap_min:
+        description: "Min minutes since last post before publishing (default 25). Set 0 for a burst."
+        required: false
+        default: "25"
 
 # Allow the workflow to commit queue.json changes back to the repo.
 permissions:
@@ -40,6 +49,10 @@ jobs:
           # Secrets are set in repo Settings -> Secrets and variables -> Actions.
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          # Scheduled runs send no inputs -> these are empty -> run_due uses its
+          # safe defaults (1 / 25). Only a manual burst dispatch sets them higher.
+          MAX_PER_RUN: ${{ github.event.inputs.max_per_run }}
+          MIN_GAP_MIN: ${{ github.event.inputs.min_gap_min }}
         run: python run_due.py
 
       - name: Commit updated queue state
