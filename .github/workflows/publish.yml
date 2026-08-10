@@ -49,10 +49,13 @@ jobs:
           # Secrets are set in repo Settings -> Secrets and variables -> Actions.
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-          # Scheduled runs send no inputs -> these are empty -> run_due uses its
-          # safe defaults (1 / 25). Only a manual burst dispatch sets them higher.
-          MAX_PER_RUN: ${{ github.event.inputs.max_per_run }}
-          MIN_GAP_MIN: ${{ github.event.inputs.min_gap_min }}
+          # Daily mixed-burst mode: each day's batch is scheduled at the SAME
+          # local time, so one run publishes them together (the 123K formula).
+          # STALE_GRACE (45min, code default) still marks any >45min-late job as
+          # "missed", so a past-dated backlog can NEVER dump. MAX_PER_RUN=25 is
+          # the hard daily safety cap. A manual dispatch can still override both.
+          MAX_PER_RUN: ${{ github.event.inputs.max_per_run || '25' }}
+          MIN_GAP_MIN: ${{ github.event.inputs.min_gap_min || '0' }}
         run: python run_due.py
 
       - name: Commit updated queue state
