@@ -11,7 +11,7 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 
 - **Max 25 reels/day.** Never exceed. `MAX_PER_RUN=25` is the hard cap in the workflow.
 - **Never clone-burst.** Posting the same *visual* many times in one window = 0 reach (proven, see below).
-- **Never same-second dump.** Scheduling many jobs at the SAME `scheduled_time` makes one cron run publish them back-to-back and Meta rate-limits it → `403 Application request limit reached` (killed a 23-at-once burst Aug 11). **STAGGER ~10 min apart** so each run does 1-2. 9-at-once was fine; 23 was not. Staggering also matches what actually worked (the 123K winners were at distinct times across the day). `MAX_PER_RUN=4` in the workflow is the pileup safety cap.
+- **USE THE EXACT WINNING CADENCE: one reel every 38 minutes, starting 09:38 Madrid.** This is not a guess — it's the measured rhythm of the 123K batch (see below). Never same-second dump (that caused `403 Application request limit reached` on a 23-at-once burst Aug 11, all failed). `MAX_PER_RUN=4` in the workflow is the pileup safety cap.
 - **Instagram penalizes duplicate VISUAL fingerprints (the video pixels), NOT overlay text or captions.** Diversify the underlying footage, not just the words.
 - **Each caption/hook is single-use.** Once a specific text is posted it's spent — don't reuse.
 - **No delete exists.** IG has no delete endpoint; once live it's permanent. Plan before firing.
@@ -34,19 +34,21 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 1. **Visual diversity** — a burst must be a MIX of distinct visuals. Keep the biggest single visual **≤ ~1/3** of the burst. Interleave so no two same-visual clips post back-to-back.
 2. **Length** — every breakout was **sub-9-seconds**; the dead ones were ~22s. Favor short value-caption clips. (Still being confirmed as more data lands — long-form 15-hook test is running now.)
 
-### It's a lottery — diversity buys tickets
-Both winners fired inside ONE ~15-min burst (~46s apart) alongside near-dead siblings.
-Bursting is fine; the winning formula is **burst a DILUTED MIX**, not spacing per se.
+### The EXACT winning cadence (measured, replicate this)
+The 123K batch = **19 reels, spaced 38 minutes apart, 09:38 → 21:02 Madrid.** Both
+breakouts sat inside that steady drip (46K at 10:16, 123K at 13:26). It was NOT a
+same-second burst — it was a **38-min metronome across the day.** Extend later into
+the evening if you have >19 reels (keep the same 38-min gap).
 
 ---
 
 ## The winning formula (use this to schedule)
 
-- Burst a **mix of distinct visuals** within a short window (all at the SAME `scheduled_time`, one cron run publishes them together).
-- Keep **biggest single visual ≤ ~1/3** of the day's batch.
+- **One reel every 38 minutes**, first at **09:38 Madrid**, continuing down the day (extend past 21:02 if you have more than ~19). Exact distance from the 123K batch.
+- Use a **mix of distinct visuals**; keep **biggest single visual ≤ ~1/3** of the day.
 - **Interleave** visual types so identical visuals never sit adjacent, e.g. `short → long-form → avatar → short → …`.
 - Prefer **short (6–9s) value-caption** clips as the backbone; mix in long-form + avatar for diversity.
-- One post per unique caption/hook. Fire at 16:00 Madrid for USA.
+- One post per unique caption/hook. ≤25/day.
 
 ---
 
