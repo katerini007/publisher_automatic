@@ -16,6 +16,10 @@ on:
         description: "Min minutes since last post before publishing (default 25). Set 0 for a burst."
         required: false
         default: "25"
+      stale_grace_min:
+        description: "Skip jobs later than this many min past their slot (default 180). Raise to re-fire a delayed burst."
+        required: false
+        default: "180"
 
 # Allow the workflow to commit queue.json changes back to the repo.
 permissions:
@@ -56,10 +60,16 @@ jobs:
           # calls across cron runs so we never re-trigger the 403 "Application
           # request limit reached" that killed a same-second 23-at-once dump.
           # MAX_PER_RUN=10 lets a run publish a tight batch (winner did 19/run)
-          # without an instantaneous storm. STALE_GRACE (45min) still blocks any
-          # past-dated backlog dump. Manual dispatch can override both.
+          # without an instantaneous storm.
           MAX_PER_RUN: ${{ github.event.inputs.max_per_run || '10' }}
           MIN_GAP_MIN: ${{ github.event.inputs.min_gap_min || '0' }}
+          # STALE_GRACE=180min: GitHub's scheduled cron is routinely delayed
+          # 30-60+ min. With the old 45-min default a delayed run marked a whole
+          # tight burst as "missed" (happened Aug 11 — 21 of 23 skipped after a
+          # ~60min cron delay). 180min lets a delayed run still fire the day's
+          # burst, while a truly old past-dated backlog is still blocked because
+          # each day's jobs are same-day and MAX_PER_RUN caps any pileup.
+          STALE_GRACE_MIN: ${{ github.event.inputs.stale_grace_min || '180' }}
         run: python run_due.py
 
       - name: Commit updated queue state
