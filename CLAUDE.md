@@ -11,6 +11,7 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 
 - **Max 25 reels/day.** Never exceed. `MAX_PER_RUN=25` is the hard cap in the workflow.
 - **Never clone-burst.** Posting the same *visual* many times in one window = 0 reach (proven, see below).
+- **Never same-second dump.** Scheduling many jobs at the SAME `scheduled_time` makes one cron run publish them back-to-back and Meta rate-limits it → `403 Application request limit reached` (killed a 23-at-once burst Aug 11). **STAGGER ~10 min apart** so each run does 1-2. 9-at-once was fine; 23 was not. Staggering also matches what actually worked (the 123K winners were at distinct times across the day). `MAX_PER_RUN=4` in the workflow is the pileup safety cap.
 - **Instagram penalizes duplicate VISUAL fingerprints (the video pixels), NOT overlay text or captions.** Diversify the underlying footage, not just the words.
 - **Each caption/hook is single-use.** Once a specific text is posted it's spent — don't reuse.
 - **No delete exists.** IG has no delete endpoint; once live it's permanent. Plan before firing.
