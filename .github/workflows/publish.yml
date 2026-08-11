@@ -49,13 +49,16 @@ jobs:
           # Secrets are set in repo Settings -> Secrets and variables -> Actions.
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
-          # Staggered-burst mode: jobs are scheduled ~10 min apart, so each cron
-          # run publishes only 1-2. This avoids Meta's 403 "Application request
-          # limit reached" that killed a 23-at-once same-second burst on Aug 11.
-          # STALE_GRACE (45min, code default) still marks any >45min-late job as
-          # "missed", so a past-dated backlog can NEVER dump. MAX_PER_RUN=4 caps
-          # any delayed-cron pileup. A manual dispatch can still override both.
-          MAX_PER_RUN: ${{ github.event.inputs.max_per_run || '4' }}
+          # WINNING FORMAT (measured from the 123K batch, DO NOT CHANGE the spacing):
+          # jobs are scheduled ~1 min apart in a morning burst from 09:24 Madrid,
+          # exactly like the batch that hit 123K/46K (Meta timestamps: 19 reels
+          # ~46s apart, 07:24-07:38 UTC). The ~1-min queue spacing spreads the API
+          # calls across cron runs so we never re-trigger the 403 "Application
+          # request limit reached" that killed a same-second 23-at-once dump.
+          # MAX_PER_RUN=10 lets a run publish a tight batch (winner did 19/run)
+          # without an instantaneous storm. STALE_GRACE (45min) still blocks any
+          # past-dated backlog dump. Manual dispatch can override both.
+          MAX_PER_RUN: ${{ github.event.inputs.max_per_run || '10' }}
           MIN_GAP_MIN: ${{ github.event.inputs.min_gap_min || '0' }}
         run: python run_due.py
 

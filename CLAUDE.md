@@ -11,7 +11,9 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 
 - **Max 25 reels/day.** Never exceed. `MAX_PER_RUN=25` is the hard cap in the workflow.
 - **Never clone-burst.** Posting the same *visual* many times in one window = 0 reach (proven, see below).
-- **USE THE EXACT WINNING CADENCE: one reel every 38 minutes, starting 09:38 Madrid.** This is not a guess — it's the measured rhythm of the 123K batch (see below). Never same-second dump (that caused `403 Application request limit reached` on a 23-at-once burst Aug 11, all failed). `MAX_PER_RUN=4` in the workflow is the pileup safety cap.
+- **🔒 IMMUTABLE WINNING FORMAT — DO NOT CHANGE THE SPACING. EVER.** Measured from the 123K batch via Instagram's own `timestamp` field (not our planned `scheduled_time`, which lies): **19 reels posted ~46 seconds apart in ONE ~14-minute burst, 07:24→07:38 UTC = 09:24 Madrid.** Replicate exactly: queue jobs **~1 minute apart, morning burst starting 09:24 Madrid.** This caused ZERO issues and got 123K + 46K.
+  - The ~1-min queue spacing is what keeps the API calls spread across cron runs. Do NOT schedule many jobs at the **same second** — that (plus 51MB long-form files hitting the processing timeout) caused `403 Application request limit reached` and failed all 23 on Aug 11. The burst itself was never the problem; the same-instant API storm was.
+  - `MAX_PER_RUN=10`, container `timeout_sec=480`/`poll_interval_sec=15` support this. Don't lower the spacing to "fix" anything — fix the API-call rate instead.
 - **Instagram penalizes duplicate VISUAL fingerprints (the video pixels), NOT overlay text or captions.** Diversify the underlying footage, not just the words.
 - **Each caption/hook is single-use.** Once a specific text is posted it's spent — don't reuse.
 - **No delete exists.** IG has no delete endpoint; once live it's permanent. Plan before firing.
@@ -34,17 +36,14 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 1. **Visual diversity** — a burst must be a MIX of distinct visuals. Keep the biggest single visual **≤ ~1/3** of the burst. Interleave so no two same-visual clips post back-to-back.
 2. **Length** — every breakout was **sub-9-seconds**; the dead ones were ~22s. Favor short value-caption clips. (Still being confirmed as more data lands — long-form 15-hook test is running now.)
 
-### The EXACT winning cadence (measured, replicate this)
-The 123K batch = **19 reels, spaced 38 minutes apart, 09:38 → 21:02 Madrid.** Both
-breakouts sat inside that steady drip (46K at 10:16, 123K at 13:26). It was NOT a
-same-second burst — it was a **38-min metronome across the day.** Extend later into
-the evening if you have >19 reels (keep the same 38-min gap).
+### The EXACT winning cadence (measured from Instagram timestamps, replicate this)
+The 123K batch = **19 reels posted ~46 seconds apart in ONE ~14-min burst, 07:24→07:38 UTC (09:24 Madrid).** Verify with the Graph API `timestamp` field per media_id — NOT the queue's `scheduled_time` (those were planned 38-min slots that never actually fired; run_due published them all together in one catch-up run). The burst got 123K + 46K with no rate-limit issues because they were small fast clips trickling ~46s apart.
 
 ---
 
 ## The winning formula (use this to schedule)
 
-- **One reel every 38 minutes**, first at **09:38 Madrid**, continuing down the day (extend past 21:02 if you have more than ~19). Exact distance from the 123K batch.
+- **~1 minute apart, one morning burst starting 09:24 Madrid** (the real winning cadence). Keep the burst tight; do NOT space out to minutes/hours and do NOT dump at the same second.
 - Use a **mix of distinct visuals**; keep **biggest single visual ≤ ~1/3** of the day.
 - **Interleave** visual types so identical visuals never sit adjacent, e.g. `short → long-form → avatar → short → …`.
 - Prefer **short (6–9s) value-caption** clips as the backbone; mix in long-form + avatar for diversity.

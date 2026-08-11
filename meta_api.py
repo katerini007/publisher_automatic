@@ -180,7 +180,7 @@ def get_container_status(creds: Credentials, container_id: str) -> str:
 
 
 def wait_for_finished(
-    creds: Credentials, container_id: str, timeout_sec: int = 280, poll_interval_sec: int = 10
+    creds: Credentials, container_id: str, timeout_sec: int = 480, poll_interval_sec: int = 15
 ) -> None:
     """Poll status_code until FINISHED. Raises on ERROR/EXPIRED or timeout."""
     elapsed = 0
