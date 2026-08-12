@@ -7,6 +7,51 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 
 ---
 
+## 🧠 CORRECTED DIAGNOSIS — why reels died (settled Aug 12 2026, evidence-based)
+
+We spent a long investigation on "why 0 views + 'won't get much reach because it
+looks like something you shared before'." Final, reconciled conclusion using ONLY
+Meta-official sources + our own audit data (ignore SEO-blog lore / exact % thresholds):
+
+1. **It is a PER-VIDEO duplicate throttle, NOT account-level jail.** Instagram's own
+   **Account Status hub was all green** during the failures → the account was never
+   suppressed. Only the individual *repeat-footage* reels get "shared before" + ~0 views.
+2. **Duplicate detection = VISUAL + AUDIO fingerprint, NOT caption/overlay text.** The
+   video pixels (and likely the audio) are what get matched. Changing the hook text or
+   caption does NOT make a new video to the algorithm.
+3. **First airing of a visual reaches; every REPOST of the same footage dies.** This is
+   why Aug 4 (fresh-ish visuals) got 123K, and the later clone/avatar/burst2day reposts
+   of the SAME footage all hit 0.
+4. **Spacing/timing was NEVER the reach driver.** PROOF from `data/trial_reels_audit.csv`:
+   the Aug 11 22:00 block was posted **~1–2 min apart (correct spacing)** and STILL got 0
+   — because it was duplicate footage. (Spacing only ever mattered for avoiding the 403
+   API-storm, not for reach.)
+5. **Meta OFFICIAL original-content policy (2026):** watermarks, **changing playback
+   speed**, mirroring, and reposting screenshots are **explicitly NOT enough** to count as
+   original. → The "CapCut speed 101% + 1 frame + mirror" fingerprint-trick is officially
+   worthless; don't do it. Only **material edits that meaningfully transform** (commentary,
+   narration, creative graphics, contextual overlays, genuinely different footage) count.
+6. **Account-level penalty DOES exist but only if "most" of your posts over a 30-day
+   window are unoriginal** → then you lose recommendation eligibility (fatal for Trial
+   Reels, which show ONLY to non-followers). We were NOT in this state (status green).
+   Recovery if ever flagged: make most posts original for 30 days; can remove unoriginal
+   posts + appeal in Account Status.
+
+### THE STRATEGIC SHIFT (do this from now on)
+**STOP "1 great clip → 20 hooks". START "20 distinct footage pieces → 1 hook each."**
+Trial Reels are a CONTENT test (is this whole reel good?), not a clean single-variable
+hook test. True same-video/different-hook A/B testing is impossible organically without
+tripping the fingerprint — do that in **Meta Ads Manager** instead. Batch-shoot many
+distinct visuals, one caption each. This never triggers the duplicate throttle AND gives
+real per-reel signal.
+
+### Audit tooling
+`_export_zeros.py` → `data/trial_reels_audit.csv` = authoritative pull from IG (all live
+media, exact `timestamp`, views, permalink). Use it to verify what actually posted and to
+find 0-view duplicates before deleting them in-app.
+
+---
+
 ## Golden rules (hard constraints)
 
 - **Max 25 reels/day.** Never exceed. `MAX_PER_RUN=25` is the hard cap in the workflow.
@@ -14,9 +59,9 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 - **🔒 IMMUTABLE WINNING FORMAT — DO NOT CHANGE THE SPACING. EVER.** Measured from the 123K batch via Instagram's own `timestamp` field (not our planned `scheduled_time`, which lies): **19 reels posted ~46 seconds apart in ONE ~14-minute burst, 07:24→07:38 UTC = 09:24 Madrid.** Replicate exactly: queue jobs **~1 minute apart, morning burst starting 09:24 Madrid.** This caused ZERO issues and got 123K + 46K.
   - The ~1-min queue spacing is what keeps the API calls spread across cron runs. Do NOT schedule many jobs at the **same second** — that (plus 51MB long-form files hitting the processing timeout) caused `403 Application request limit reached` and failed all 23 on Aug 11. The burst itself was never the problem; the same-instant API storm was.
   - `MAX_PER_RUN=10`, container `timeout_sec=480`/`poll_interval_sec=15` support this. Don't lower the spacing to "fix" anything — fix the API-call rate instead.
-- **Instagram penalizes duplicate VISUAL fingerprints (the video pixels), NOT overlay text or captions.** Diversify the underlying footage, not just the words.
+- **Instagram penalizes duplicate VISUAL + AUDIO fingerprints (the video pixels & sound), NOT overlay text or captions.** Diversify the underlying footage, not just the words. (See CORRECTED DIAGNOSIS above.)
 - **Each caption/hook is single-use.** Once a specific text is posted it's spent — don't reuse.
-- **No delete exists.** IG has no delete endpoint; once live it's permanent. Plan before firing.
+- **Delete:** our publisher/API has **NO delete endpoint** — the code can only publish. But **Kat CAN delete manually in the IG app** (she did). "Once live it's permanent" applies to *our automation*, not to her. Removing unoriginal posts can even help eligibility.
 - **Target audience = USA.** Post at **16:00 Madrid = 10am US Eastern / 7am Pacific**.
 - **Security:** never print/reveal `.env` credential values. Only check key *presence* or report failures.
 
