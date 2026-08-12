@@ -52,6 +52,64 @@ find 0-view duplicates before deleting them in-app.
 
 ---
 
+## ⚙️ PUBLISHING MECHANICS — mistakes made Aug 12 2026 & the fixes (READ before any burst)
+
+Today we posted a 25-reel batch and hit 4 avoidable walls. All are now fixed in
+code, but the DEPLOYER must still follow these rules — the code protects you, don't
+lean on it carelessly.
+
+1. **NEVER set `scheduled_time` in the future when you want an immediate burst.**
+   Bug hit: I spaced jobs 20s apart starting "now"; by the time the cloud runner
+   checked, only the first ~3 were "due" (rest were seconds in the FUTURE) → it
+   published 3 and exited. **For an immediate burst, set every job's
+   `scheduled_time` to a time in the PAST** (e.g. now − a few min) so all are due.
+   Sequential publishing gives the ~46s spacing naturally — you do NOT need future
+   timestamps to space a burst.
+
+2. **NEVER build captions from `master_reels.csv`.** That sheet flattens line breaks
+   to `" / "` for CSV. Posting from it = ugly `/`-littered captions (happened to 13
+   live reels Aug 12). **Pull captions from the ORIGINAL queue jobs (real `\n`),** or
+   un-flatten with `caption.replace(" / ", "\n")`. Always eyeball `repr(caption)`
+   before firing.
+
+3. **Meta's publish 500 "please retry" is a VELOCITY THROTTLE and it LIES.** After
+   ~13 fast Trial-Reel publishes Meta starts 500-ing. Worse: **a 500 sometimes
+   returns "failed" but the media ACTUALLY WENT LIVE** (reel18 did). Retrying a
+   "failed" job then DUPLICATES it. → Now handled in `run_due.py` (see below) but the
+   rule stands: **after any failed/aborted burst, reconcile queue against live IG
+   before re-firing.** Use `_export_zeros.py` / `get_recent_media` and compare
+   permalinks. NEVER blindly retry a "failed" job.
+
+4. **Cancelling a GitHub run is NOT instant** — it published 10 more reels after I
+   hit cancel. Expect in-flight work to finish; reconcile afterward.
+
+### What the hardened `run_due.py` now does for you (Aug 12)
+- **Idempotent publish:** on any retry it first calls `_find_orphan_post()` — pulls
+  recent live media, and since we publish ONE at a time, any recent post not yet in
+  the queue IS this job → it adopts the permalink instead of re-posting. 500-but-live
+  can no longer duplicate.
+- **Self-healing retries:** transient 5xx / rate-limit → job stays `scheduled` with a
+  `retry_after` backoff (`MAX_ATTEMPTS=5`, `RETRY_BACKOFF_MIN=20×attempt`); the normal
+  */10 cron drains them automatically. Permanent errors (400 etc.) fail fast.
+- **Velocity pacing:** `INTER_POST_SLEEP_SEC=60` between posts within a run.
+- **Container reuse:** retries reuse the stored `container_id` (never recreate — a 2nd
+  container = a 2nd post waiting to happen).
+- New job field: `retry_after` (ISO); due-filter skips jobs still in backoff.
+
+### Safe burst recipe (use this every time)
+1. `git fetch && git pull --ff-only`.
+2. Copy videos → `videos/<batch>/`, commit, push; verify a raw URL returns HTTP 200.
+3. Build jobs: captions with real `\n`, `scheduled_time` in the PAST, `trial=True`,
+   `media_type="REELS"`, unique `video_url`.
+4. Push queue, then `gh workflow run publish.yml -f max_per_run=25 -f min_gap_min=0
+   -f stale_grace_min=180` (INTER_POST_SLEEP defaults to 60).
+5. Watch to completion, THEN **reconcile against live IG** (count live vs queue
+   published; adopt any orphans). Let self-healing drain stragglers — don't hammer.
+6. Expect Meta to velocity-throttle past ~13–18 fast publishes; the rest auto-retry
+   over the next 1–2h. That's normal now, not a failure.
+
+---
+
 ## Golden rules (hard constraints)
 
 - **Max 25 reels/day.** Never exceed. `MAX_PER_RUN=25` is the hard cap in the workflow.
