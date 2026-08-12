@@ -2767,7 +2767,7 @@
     "id": "b1208_19_ad4bf73c",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel19.mp4",
     "caption": "The biggest content mistake business owners still make \ud83d\udc47\n\nPosting one reel a week and hoping it grows.\n\nIt won't.\n\nYou grow 10x faster when you post more, test what works, and double down on your best patterns.\n\nAnd even if you want to stay 100% authentic \u2014 AI can still do the ideas, the editing and the uploading, so you post more without burning out.\n\nComment AUTOMATION and I'll show you the system.\n\n#contentstrategy #aiforbusiness #reelsgrowth #smallbusiness #reels",
     "_hook": "The biggest content creation mistake business owners still make",
@@ -2778,14 +2778,15 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886329226677000"
+    "error": null,
+    "container_id": "17886329226677000",
+    "retry_after": "2026-08-12T22:59:25"
   },
   {
     "id": "b1208_20_2de61aa6",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel20.mp4",
     "caption": "The #1 AI skill for business owners in 2026 isn't a tool \ud83d\udc47\n\nIt's knowing WHERE to use it.\n\nTools change every single day. Chasing every shiny new one is a waste of time.\n\nDo this instead: look at where your team loses the most hours. Uploading and scheduling alone can eat ~3 hours a week. An AI agent can do that part on autopilot.\n\nFind the problem first. Then pick the tool \u2014 not the other way around.\n\nAI is a tool, not a buzzword.\n\nComment AUTOMATION and I'll show you where to start.\n\n#aiforbusiness #contentautomation #smallbusinessowner #aitools #reels",
     "_hook": "The AI skill every business owner needs in 2026",
@@ -2796,14 +2797,15 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886329367677000"
+    "error": null,
+    "container_id": "17886329367677000",
+    "retry_after": "2026-08-12T22:59:25"
   },
   {
     "id": "b1208_21_eb047664",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel21.mp4",
     "caption": "This AI workflow makes 30 Reels in 5 minutes \ud83d\udc47\n\nYou do not need  30 finished masterpiecess, you need 30 tested versions.\n\nI make one strong idea, then AI spins it into lots of hooks and cuts. Then I test them to find the one that flies.\nRecently one wnet to 20K views I iwll be tetsing this hook with otehr videos to determine if the hook is the winning element here. \nThat's how a brand new account can post every day without a big team.\n\nComment AUTOMATION and I'll show you the workflow.\n\n#aiautomation #reelsstrategy #contentcreation #aiforbusiness #reels",
     "_hook": "This AI workflow creates 30 Reels in 5 minutes",
@@ -2814,14 +2816,15 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886329499677000"
+    "error": null,
+    "container_id": "17886329499677000",
+    "retry_after": "2026-08-12T22:59:25"
   },
   {
     "id": "b1208_22_07df186f",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel22.mp4",
     "caption": "The #1 AI skill for business owners in 2026 isn't a tool \ud83d\udc47\n\nIt's knowing WHERE to use it.\n\nTools change every single day. Chasing every shiny new one is a waste of time.\n\nDo this instead: look at where your team loses the most hours. Uploading and scheduling alone can eat ~3 hours a week. An AI agent can do that part on autopilot.\n\nFind the problem first. Then pick the tool \u2014 not the other way around.\n\nAI is a tool, not a buzzword.\n\nComment AUTOMATION and I'll show you where to start.\n\n#aiforbusiness #contentautomation #smallbusinessowner #aitools #reels",
     "_hook": "The #1 AI skill for business owners in 2026 isn't a tool",
@@ -2832,14 +2835,15 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886329682677000"
+    "error": null,
+    "container_id": "17886329682677000",
+    "retry_after": "2026-08-12T22:59:25"
   },
   {
     "id": "b1208_23_c702445e",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel23.mp4",
     "caption": "This AI workflow makes 30 Reels in 5 minutes \ud83d\udc47\n\nYou do not need  30 finished masterpiecess, you need 30 tested versions.\n\nI make one strong idea, then AI spins it into lots of hooks and cuts. Then I test them to find the one that flies.\nRecently one wnet to 20K views I iwll be tetsing this hook with otehr videos to determine if the hook is the winning element here. \nThat's how a brand new account can post every day without a big team.\n\nComment AUTOMATION and I'll show you the workflow.\n\n#aiautomation #reelsstrategy #contentcreation #aiforbusiness #reels",
     "_hook": "This AI workflow makes 30 Reels in 5 minutes",
@@ -2850,14 +2854,15 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886329889677000"
+    "error": null,
+    "container_id": "17886329889677000",
+    "retry_after": "2026-08-12T22:59:25"
   },
   {
     "id": "b1208_24_bb8c9841",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel24.mp4",
     "caption": "By 2027, businesses without an AI content system will struggle to keep up \ud83d\udc47\n\nNot because AI is magic, but because your competitors will post more, test faster, and learn quicker than you ever could by hand.\n\nThe winners won't have the biggest team. They'll have the best system.\n\nGood news: you can start small this year.\n\nComment AUTOMATION and I'll show you the first step.\n\n#aiforbusiness #futureofmarketing #contentsystem #businessgrowth #reels",
     "_hook": "Still comfortable without AI? Not for much longer.",
@@ -2868,14 +2873,15 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886330066677000"
+    "error": null,
+    "container_id": "17886330066677000",
+    "retry_after": "2026-08-12T22:59:25"
   },
   {
     "id": "b1208_25_b64e9ed8",
     "created_at": "2026-08-12T16:09:41",
     "scheduled_time": "2026-08-12T21:48:43",
-    "status": "failed",
+    "status": "scheduled",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_12-08/reel25.mp4",
     "caption": "If you could learn only ONE AI tool this year, make it this \ud83d\udc47\n\nClaude.\n\nFor a business owner it can write your content, sort your messy ideas, build little \"skills\" that do the same job again and again, and take the boring tasks off your plate.\n\nYou don't need 20 tools. You need one you actually use well.\n\nComment AUTOMATION and I'll show you how I use it for my business.\n\n#claudeai #aiforbusiness #aitools #productivity #reels",
     "_hook": "If you could learn only ONE AI tool this year, make it this",
@@ -2886,7 +2892,8 @@
     "attempts": 2,
     "trial": true,
     "media_type": "REELS",
-    "error": "Publish failed (500): An unexpected error has occurred. Please retry your request later.",
-    "container_id": "17886330210677000"
+    "error": null,
+    "container_id": "17886330210677000",
+    "retry_after": "2026-08-12T22:59:25"
   }
 ]

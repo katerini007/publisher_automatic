@@ -20,6 +20,10 @@ on:
         description: "Skip jobs later than this many min past their slot (default 180). Raise to re-fire a delayed burst."
         required: false
         default: "180"
+      inter_post_sleep_sec:
+        description: "Seconds to pause between posts within a run (default 60). Keeps under Meta's velocity throttle."
+        required: false
+        default: "60"
 
 # Allow the workflow to commit queue.json changes back to the repo.
 permissions:
@@ -70,6 +74,14 @@ jobs:
           # burst, while a truly old past-dated backlog is still blocked because
           # each day's jobs are same-day and MAX_PER_RUN caps any pileup.
           STALE_GRACE_MIN: ${{ github.event.inputs.stale_grace_min || '180' }}
+          # Pace posts to stay under Meta's publish-velocity throttle (the 500
+          # "please retry" storm we hit posting 13 reels fast on Aug 12). 60s gap
+          # between posts within a run.
+          INTER_POST_SLEEP_SEC: ${{ github.event.inputs.inter_post_sleep_sec || '60' }}
+          # Transient 5xx/rate-limit failures auto-retry on later cron runs (with
+          # backoff) instead of dying — so the queue drains itself, no human needed.
+          MAX_ATTEMPTS: '5'
+          RETRY_BACKOFF_MIN: '20'
         run: python run_due.py
 
       - name: Commit updated queue state

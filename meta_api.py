@@ -217,6 +217,23 @@ def get_permalink(creds: Credentials, media_id: str) -> Optional[str]:
     return resp.json().get("permalink")
 
 
+def get_recent_media(creds: Credentials, limit: int = 8) -> list:
+    """Return the account's most recent media (id, permalink, timestamp, caption).
+    Used to detect a post that actually went live even though the publish call
+    returned a 5xx — Meta's publish endpoint sometimes errors AFTER the media is
+    already created, so we reconcile against reality instead of trusting the error."""
+    url = f"{GRAPH_HOST}/{API_VERSION}/{creds.ig_user_id}/media"
+    try:
+        resp = _request(
+            "GET", url, context="Recent media",
+            params={"fields": "id,permalink,timestamp,caption", "limit": limit},
+            headers=_auth_header(creds), timeout=30,
+        )
+        return resp.json().get("data", [])
+    except MetaAPIError:
+        return []
+
+
 def check_publishing_limit(creds: Credentials) -> Dict[str, Any]:
     """Instagram caps API-published posts at 100 per rolling 24h window."""
     url = f"{GRAPH_HOST}/{API_VERSION}/{creds.ig_user_id}/content_publishing_limit"
