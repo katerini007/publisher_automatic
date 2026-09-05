@@ -2902,7 +2902,7 @@
     "id": "b0509_01_cb0402a9",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:50:43",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel01.mp4",
@@ -2910,13 +2910,17 @@
     "_hook": "v1 smart-build",
     "_source": "S2",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890864281677000",
+    "media_id": "17998380701804322",
+    "permalink": "https://www.instagram.com/reel/Dc7G4EsFbeJ/",
+    "error": null
   },
   {
     "id": "b0509_02_e9abb570",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:51:29",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel02.mp4",
@@ -2924,13 +2928,17 @@
     "_hook": "v1 num1-skill",
     "_source": "S6",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890864602677000",
+    "media_id": "17959747380219394",
+    "permalink": "https://www.instagram.com/reel/Dc7HEH-FHFC/",
+    "error": null
   },
   {
     "id": "b0509_03_785da92b",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:52:15",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel03.mp4",
@@ -2938,13 +2946,17 @@
     "_hook": "v2 avatar-replace",
     "_source": "S2",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890864947677000",
+    "media_id": "18117640321939858",
+    "permalink": "https://www.instagram.com/reel/Dc7HQJwkqRy/",
+    "error": null
   },
   {
     "id": "b0509_04_38895e85",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:53:01",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel04.mp4",
@@ -2952,13 +2964,17 @@
     "_hook": "v1 biggest-mistake",
     "_source": "S5",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890865232677000",
+    "media_id": "18054821879558176",
+    "permalink": "https://www.instagram.com/reel/Dc7HcfgjBn7/",
+    "error": null
   },
   {
     "id": "b0509_05_325df374",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:53:47",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel05.mp4",
@@ -2966,13 +2982,17 @@
     "_hook": "v1 30reels-howto",
     "_source": "S4",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890865559677000",
+    "media_id": "18114317513073358",
+    "permalink": "https://www.instagram.com/reel/Dc7HoiUjfkk/",
+    "error": null
   },
   {
     "id": "b0509_06_89a50ba9",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:54:33",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel06.mp4",
@@ -2980,13 +3000,17 @@
     "_hook": "v1 camera-ready",
     "_source": "S3",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890865811677000",
+    "media_id": "18105294509060639",
+    "permalink": "https://www.instagram.com/reel/Dc7H05kjRX3/",
+    "error": null
   },
   {
     "id": "b0509_07_533db5f0",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:55:19",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel07.mp4",
@@ -2994,13 +3018,17 @@
     "_hook": "v3 30reels-6min",
     "_source": "S2",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890866090677000",
+    "media_id": "18079279868354828",
+    "permalink": "https://www.instagram.com/reel/Dc7H-9egXfp/",
+    "error": null
   },
   {
     "id": "b0509_08_bf56c1b1",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:56:05",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel08.mp4",
@@ -3008,13 +3036,17 @@
     "_hook": "v1 comfortable",
     "_source": "S1",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890866318677000",
+    "media_id": "18438594262130877",
+    "permalink": "https://www.instagram.com/reel/Dc7ILRbF49U/",
+    "error": null
   },
   {
     "id": "b0509_09_bc5cb581",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:56:51",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel09.mp4",
@@ -3022,13 +3054,17 @@
     "_hook": "v1 30reels-makes",
     "_source": "IMG",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890866756677000",
+    "media_id": "17993866404001305",
+    "permalink": "https://www.instagram.com/reel/Dc7IYqbE0Zj/",
+    "error": null
   },
   {
     "id": "b0509_10_6274b5bc",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:57:37",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel10.mp4",
@@ -3036,13 +3072,17 @@
     "_hook": "v1 biggest-mistake",
     "_source": "CP",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890866963677000",
+    "media_id": "18088611704465298",
+    "permalink": "https://www.instagram.com/reel/Dc7IsWbkVsf/",
+    "error": null
   },
   {
     "id": "b0509_11_72e87d59",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:58:23",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel11.mp4",
@@ -3050,13 +3090,17 @@
     "_hook": "v2 ceo-calendar",
     "_source": "S6",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890867431677000",
+    "media_id": "18417444202152436",
+    "permalink": "https://www.instagram.com/reel/Dc7I3ikj5Eg/",
+    "error": null
   },
   {
     "id": "b0509_12_1ae02484",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:59:09",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel12.mp4",
@@ -3064,13 +3108,17 @@
     "_hook": "v2 30reels-makes",
     "_source": "S5",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890867761677000",
+    "media_id": "18095936708170330",
+    "permalink": "https://www.instagram.com/reel/Dc7JDsQFQHt/",
+    "error": null
   },
   {
     "id": "b0509_13_d73cdbe2",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T00:59:55",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel13.mp4",
@@ -3078,13 +3126,17 @@
     "_hook": "v2 connect-claude-view",
     "_source": "S4",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890868088677000",
+    "media_id": "18140222044611495",
+    "permalink": "https://www.instagram.com/reel/Dc7JQWdjDKe/",
+    "error": null
   },
   {
     "id": "b0509_14_f4469ffe",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T01:00:41",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel14.mp4",
@@ -3092,13 +3144,17 @@
     "_hook": "v2 connect-claude",
     "_source": "S3",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890868661677000",
+    "media_id": "18030921173896807",
+    "permalink": "https://www.instagram.com/reel/Dc7Jb_hDyES/",
+    "error": null
   },
   {
     "id": "b0509_15_c60114ac",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T01:01:27",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel15.mp4",
@@ -3106,13 +3162,17 @@
     "_hook": "v4 easiest-126k",
     "_source": "S2",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890868973677000",
+    "media_id": "18064791758788401",
+    "permalink": "https://www.instagram.com/reel/Dc7JtyHAE6k/",
+    "error": null
   },
   {
     "id": "b0509_16_c816df7a",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T01:02:13",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel16.mp4",
@@ -3120,13 +3180,17 @@
     "_hook": "v2 one-tool",
     "_source": "S1",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890869258677000",
+    "media_id": "18112941380046218",
+    "permalink": "https://www.instagram.com/reel/Dc7J6BDDx9h/",
+    "error": null
   },
   {
     "id": "b0509_17_ea17ec7c",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T01:02:59",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel17.mp4",
@@ -3134,13 +3198,17 @@
     "_hook": "v2 ceo-calendar",
     "_source": "IMG",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890869522677000",
+    "media_id": "18023212892704277",
+    "permalink": "https://www.instagram.com/reel/Dc7KMMMD54_/",
+    "error": null
   },
   {
     "id": "b0509_18_dabbb50b",
     "created_at": "2026-09-06T01:05:31",
     "scheduled_time": "2026-09-06T01:03:45",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_05-09/reel18.mp4",
@@ -3148,6 +3216,10 @@
     "_hook": "v2 num1-skill",
     "_source": "CP",
     "_batch": "batch_05-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17890869795677000",
+    "media_id": "18064766546750995",
+    "permalink": "https://www.instagram.com/reel/Dc7KWFgjbXW/",
+    "error": null
   }
 ]
