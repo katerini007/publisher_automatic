@@ -3262,7 +3262,7 @@
     "id": "b1709_03_e3d84b5f",
     "created_at": "2026-09-17T08:05:14",
     "scheduled_time": "2026-09-19T09:24:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_17-09/reel03.mp4",
@@ -3270,7 +3270,8 @@
     "_hook": "v1 avatar-effort",
     "_slot": "morning",
     "_batch": "batch_17-09",
-    "attempts": 0
+    "attempts": 0,
+    "error": "skipped: 200min past window (> 180)"
   },
   {
     "id": "b1709_04_09b256f0",
