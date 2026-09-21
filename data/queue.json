@@ -3328,7 +3328,7 @@
     "id": "b1709_07_339e6382",
     "created_at": "2026-09-17T08:05:14",
     "scheduled_time": "2026-09-21T09:24:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_17-09/reel07.mp4",
@@ -3336,7 +3336,8 @@
     "_hook": "v1 not-a-tool",
     "_slot": "morning",
     "_batch": "batch_17-09",
-    "attempts": 0
+    "attempts": 0,
+    "error": "skipped: 402min past window (> 180)"
   },
   {
     "id": "b1709_08_f853772b",
