@@ -3361,7 +3361,7 @@
     "id": "b1709_09_4dda5d0c",
     "created_at": "2026-09-17T08:05:14",
     "scheduled_time": "2026-09-22T09:24:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_17-09/reel09.mp4",
@@ -3369,7 +3369,8 @@
     "_hook": "v1 30-reels",
     "_slot": "morning",
     "_batch": "batch_17-09",
-    "attempts": 0
+    "attempts": 0,
+    "error": "skipped: 276min past window (> 180)"
   },
   {
     "id": "b1709_10_b0fa9f34",
