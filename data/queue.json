@@ -3427,7 +3427,7 @@
     "id": "b1709_13_a9587769",
     "created_at": "2026-09-17T08:05:14",
     "scheduled_time": "2026-09-24T09:24:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_17-09/reel13.mp4",
@@ -3435,7 +3435,8 @@
     "_hook": "v1 connect-IG-Claude",
     "_slot": "morning",
     "_batch": "batch_17-09",
-    "attempts": 0
+    "attempts": 0,
+    "error": "skipped: 291min past window (> 180)"
   },
   {
     "id": "b1709_14_d1cce79d",
