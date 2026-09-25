@@ -3478,7 +3478,7 @@
     "id": "b1709_16_0ab8098f",
     "created_at": "2026-09-17T08:05:14",
     "scheduled_time": "2026-09-25T20:30:00",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_17-09/reel16.mp4",
@@ -3486,7 +3486,11 @@
     "_hook": "v2 CEO-calendar",
     "_slot": "evening",
     "_batch": "batch_17-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17894154645677000",
+    "media_id": "18114105692093166",
+    "permalink": "https://www.instagram.com/reel/DdubFeaE77I/",
+    "error": null
   },
   {
     "id": "b1709_17_453d61b2",
