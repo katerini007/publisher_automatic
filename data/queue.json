@@ -3460,7 +3460,7 @@
     "id": "b1709_15_662b500e",
     "created_at": "2026-09-17T08:05:14",
     "scheduled_time": "2026-09-25T09:24:00",
-    "status": "scheduled",
+    "status": "published",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_17-09/reel15.mp4",
@@ -3468,7 +3468,11 @@
     "_hook": "v1 biggest-mistake",
     "_slot": "morning",
     "_batch": "batch_17-09",
-    "attempts": 0
+    "attempts": 1,
+    "container_id": "17894050161677000",
+    "media_id": "18125774263868932",
+    "permalink": "https://www.instagram.com/reel/Dds7-rXj5yp/",
+    "error": null
   },
   {
     "id": "b1709_16_0ab8098f",
