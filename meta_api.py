@@ -25,8 +25,10 @@ import requests
 # Instagram API with Instagram Login (IGAA... tokens) — NOT the Facebook-login
 # Graph API. Uses graph.instagram.com and the token's own account via "me".
 API_VERSION = "v23.0"
-GRAPH_HOST = "https://graph.instagram.com"
-RUPLOAD_HOST = "https://rupload.instagram.com"
+# Old IGAA token: defaults below. New system-user token (Nov 2026 route): set
+# GRAPH_HOST=https://graph.facebook.com, RUPLOAD_HOST=https://rupload.facebook.com, IG_USER_ID.
+GRAPH_HOST = os.environ.get("GRAPH_HOST") or "https://graph.instagram.com"
+RUPLOAD_HOST = os.environ.get("RUPLOAD_HOST") or "https://rupload.instagram.com"
 
 # Only the token is truly required for publishing via Instagram Login. The
 # account is addressed as "me" (whoever owns the token), so the numeric
@@ -61,7 +63,7 @@ def load_credentials() -> Credentials:
         )
     return Credentials(
         page_access_token=os.environ["META_PAGE_ACCESS_TOKEN"],
-        ig_user_id="me",
+        ig_user_id=os.environ.get("IG_USER_ID") or "me",
     )
 
 

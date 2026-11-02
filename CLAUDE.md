@@ -7,6 +7,30 @@ playbook: the mechanics, the safety rails, and — most importantly — the
 
 ---
 
+## 🔑 TOKEN HISTORY + RESET (Nov 2 2026)
+
+- **Aug–Oct 2026:** posted with an Instagram-login `IGAA…` token on `graph.instagram.com`
+  (account addressed as `me`). Proven for Trial Reels (123K batch).
+- **Nov 2026:** that setup broke; it needs a reset (new token, relogin). New Meta apps
+  (since ~late Oct 2026) only offer "Unified login", and its Generate-token / Login-URL
+  tokens come back valid but with NO accounts attached. What works (proven on Bastida
+  + Epoxy, Nov 2 2026): a **system user in Business settings**.
+  1. Business settings → Instagram profiles: the account must show "Owned by" the
+     business (if "Login needed", log in as that IG account first).
+  2. Users → System users → Add (role **Employee**; Admin needs a 7-day-old business).
+  3. Assign assets: the **App** (Manage app), the **Instagram account**, the **Facebook Page**.
+  4. Generate token → app → expiry **Never** → `instagram_basic`, `instagram_content_publish`,
+     `instagram_manage_insights`, `pages_show_list`, `pages_read_engagement`. Shown once.
+- **Code switch (no other changes needed):** `meta_api.py` reads hosts from env.
+  - `.env` (Kat pastes herself): `META_PAGE_ACCESS_TOKEN=…`, `IG_USER_ID=<numeric id>`,
+    `GRAPH_HOST=https://graph.facebook.com`, `RUPLOAD_HOST=https://rupload.facebook.com`.
+  - GitHub: secrets `META_PAGE_ACCESS_TOKEN` + `IG_USER_ID`; vars `GRAPH_HOST` + `RUPLOAD_HOST`.
+  - Leave the vars unset = old `graph.instagram.com` behaviour.
+- **Still unproven with a system-user token:** the trial flag (Trial Reels). Test with ONE reel first.
+- The full client guide: `AGENTS/BABUSHKA/setup/META_SETUP.html`.
+
+---
+
 ## 🧠 CORRECTED DIAGNOSIS — why reels died (settled Aug 12 2026, evidence-based)
 
 We spent a long investigation on "why 0 views + 'won't get much reach because it
