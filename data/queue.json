@@ -3532,7 +3532,7 @@
     "id": "b0211_01_eee62b58",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:24:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V5_new_edit_kat_style_42s.mp4",
@@ -3544,14 +3544,14 @@
     "_len_sec": 42,
     "_slot": "morning",
     "attempts": 1,
-    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "error": "skipped: 486min past window (> 180)",
     "retry_after": "2026-11-03T09:49:20"
   },
   {
     "id": "b0211_02_231ddc2b",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:25:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V6_pain_hook_titles_37s.mp4",
@@ -3563,14 +3563,14 @@
     "_len_sec": 37,
     "_slot": "morning",
     "attempts": 1,
-    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "error": "skipped: 485min past window (> 180)",
     "retry_after": "2026-11-03T09:50:21"
   },
   {
     "id": "b0211_03_e39ca56b",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:26:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V7_pronounce_coldopen_38s.mp4",
@@ -3582,14 +3582,14 @@
     "_len_sec": 38,
     "_slot": "morning",
     "attempts": 1,
-    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "error": "skipped: 484min past window (> 180)",
     "retry_after": "2026-11-03T09:51:21"
   },
   {
     "id": "b0211_04_e44adf7f",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:27:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V8_failed_first_41s.mp4",
@@ -3601,14 +3601,14 @@
     "_len_sec": 41,
     "_slot": "morning",
     "attempts": 1,
-    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "error": "skipped: 483min past window (> 180)",
     "retry_after": "2026-11-03T09:52:21"
   },
   {
     "id": "b0211_05_266a29d6",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:28:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V4_story_raw_87s.mp4",
@@ -3620,14 +3620,14 @@
     "_len_sec": 87,
     "_slot": "morning",
     "attempts": 1,
-    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "error": "skipped: 482min past window (> 180)",
     "retry_after": "2026-11-03T09:53:21"
   },
   {
     "id": "b0211_06_3f6137d1",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:29:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V1_hookA_30k_28s.mp4",
@@ -3639,14 +3639,14 @@
     "_len_sec": 28,
     "_slot": "morning",
     "attempts": 1,
-    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "error": "skipped: 481min past window (> 180)",
     "retry_after": "2026-11-03T09:54:21"
   },
   {
     "id": "b0211_07_0e6d65ce",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:30:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V2_hookB_reveal_28s.mp4",
@@ -3658,13 +3658,13 @@
     "_len_sec": 28,
     "_slot": "morning",
     "attempts": 0,
-    "error": null
+    "error": "skipped: 480min past window (> 180)"
   },
   {
     "id": "b0211_08_754a75d9",
     "created_at": "2026-11-02T18:45:48",
     "scheduled_time": "2026-11-03T09:31:00",
-    "status": "scheduled",
+    "status": "missed",
     "trial": true,
     "media_type": "REELS",
     "video_url": "https://raw.githubusercontent.com/katerini007/publisher_automatic/main/videos/batch_02-11/V3_kevin_coldopen_56s.mp4",
@@ -3676,6 +3676,6 @@
     "_len_sec": 56,
     "_slot": "morning",
     "attempts": 0,
-    "error": null
+    "error": "skipped: 479min past window (> 180)"
   }
 ]
