@@ -3543,8 +3543,9 @@
     "_batch": "batch_02-11",
     "_len_sec": 42,
     "_slot": "morning",
-    "attempts": 0,
-    "error": null
+    "attempts": 1,
+    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "retry_after": "2026-11-03T09:49:20"
   },
   {
     "id": "b0211_02_231ddc2b",
@@ -3561,8 +3562,9 @@
     "_batch": "batch_02-11",
     "_len_sec": 37,
     "_slot": "morning",
-    "attempts": 0,
-    "error": null
+    "attempts": 1,
+    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "retry_after": "2026-11-03T09:50:21"
   },
   {
     "id": "b0211_03_e39ca56b",
@@ -3579,8 +3581,9 @@
     "_batch": "batch_02-11",
     "_len_sec": 38,
     "_slot": "morning",
-    "attempts": 0,
-    "error": null
+    "attempts": 1,
+    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "retry_after": "2026-11-03T09:51:21"
   },
   {
     "id": "b0211_04_e44adf7f",
@@ -3597,8 +3600,9 @@
     "_batch": "batch_02-11",
     "_len_sec": 41,
     "_slot": "morning",
-    "attempts": 0,
-    "error": null
+    "attempts": 1,
+    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "retry_after": "2026-11-03T09:52:21"
   },
   {
     "id": "b0211_05_266a29d6",
@@ -3615,8 +3619,9 @@
     "_batch": "batch_02-11",
     "_len_sec": 87,
     "_slot": "morning",
-    "attempts": 0,
-    "error": null
+    "attempts": 1,
+    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "retry_after": "2026-11-03T09:53:21"
   },
   {
     "id": "b0211_06_3f6137d1",
@@ -3633,8 +3638,9 @@
     "_batch": "batch_02-11",
     "_len_sec": 28,
     "_slot": "morning",
-    "attempts": 0,
-    "error": null
+    "attempts": 1,
+    "error": "transient (attempt 1): Rate limit check failed (401): Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.",
+    "retry_after": "2026-11-03T09:54:21"
   },
   {
     "id": "b0211_07_0e6d65ce",
